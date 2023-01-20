@@ -6,6 +6,8 @@ import 'Drawer page/fourth_page.dart';
 import 'Muqqadima page/muqaddima_page.dart';
 import 'body page/birinchi_page.dart';
 import 'body page/beshinchi_bob.dart';
+import 'body page/uchinchipage.dart';
+import 'body page/turtinchipage.dart';
 
 
 void main() => runApp(MaterialApp(
@@ -112,10 +114,29 @@ class _KonstitutsiyaState extends State<Konstitutsiya> {
                 color: Colors.cyan[50],
                 child: ListTile(
                   title: Text("IKKINCHI BO'LIM.INSON VA FUQAROLARNING ASOSIY HUQUQLARI,ERKINLIKLARI."),
-                  subtitle: Text("V. bob. Umumiy qoidalar"),
                   leading: Icon(Icons.arrow_forward_ios_outlined),
                   onTap: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>IkkinchiPage()));
+                  },
+                ),
+              ),
+              Card(
+                color: Colors.cyan[50],
+                child: ListTile(
+                  title: Text("UCHINCHI BO'LIM.JAMIYAT VA SHAXS"),
+                  leading: Icon(Icons.arrow_forward_ios_outlined),
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>UchinchiBolimPage()));
+                  },
+                ),
+              ),
+              Card(
+                color: Colors.cyan[50],
+                child: ListTile(
+                  title: Text("TO'RTINCHI BO'LIM.MA'MURIY-HUDUDIY VA DAVLAT TUZILISHI"),
+                  leading: Icon(Icons.arrow_forward_ios_outlined),
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TurtinchiPage()));
                   },
                 ),
               ),
