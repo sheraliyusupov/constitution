@@ -15,11 +15,21 @@ class _IkkinchiPageState extends State<IkkinchiPage> {
       appBar: AppBar(
           backgroundColor: Colors.white70,
           centerTitle: true,
-          title: const Text(
-            "CONSTITUTION.UZ",
-            style: TextStyle(
-              color: Colors.blue,
-            ),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CircleAvatar(backgroundColor: Colors.white,
+              child: SizedBox(
+                width: 60,
+                height: 60,
+                child:  ClipOval(
+                  child: Image.asset("images/gerb.png"),),
+              ),),
+              Text("CONSTITUTION.Uz",style: TextStyle(
+                color: Colors.blue,
+                fontWeight: FontWeight.bold,
+              ),)
+            ],
           ),
           // ignore: prefer_const_literals_to_create_immutables
           actions: [

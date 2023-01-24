@@ -14,10 +14,25 @@ class _MuqqadimaPageState extends State<MuqqadimaPage> {
       appBar: AppBar(
           backgroundColor: Colors.white70,
           centerTitle: true,
-          title: Text("CONSTITUTION.UZ",
-            style: TextStyle(
-              color: Colors.blue,
-            ),),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                child: SizedBox(
+                  width: 60,
+                  height: 60,
+                  child: ClipOval(
+                    child: Image.asset("images/gerb.png"),
+                  ),
+                ),
+              ),
+              Text("CONSTITUTION.UZ",style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),)
+            ],
+          ),
           actions: <Widget>[
             Icon(Icons.search_outlined,size: 40,),
 

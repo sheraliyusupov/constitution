@@ -8,9 +8,11 @@ import 'body page/birinchi_page.dart';
 import 'body page/beshinchi_bob.dart';
 import 'body page/uchinchipage.dart';
 import 'body page/turtinchipage.dart';
+import 'body page/beshinchipage.dart';
+import 'body page/oltinchi_page.dart';
 
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
   home: Konstitutsiya(),
   debugShowCheckedModeBanner: false,
 
@@ -32,10 +34,24 @@ class _KonstitutsiyaState extends State<Konstitutsiya> {
       appBar: AppBar(
         backgroundColor: Colors.white70,
         centerTitle: true,
-        title: Text("CONSTITUTION.UZ",
-        style: TextStyle(
-          color: Colors.blue,
-        ),),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CircleAvatar(backgroundColor: Colors.white,
+                child: SizedBox(
+                  width: 60,
+                  height: 60,
+                  child: ClipOval(
+                    child: Image.asset("images/gerb.png"),
+                  ),
+                )),
+            Text("CONSTITUTION.UZ",style: TextStyle(
+              color: Colors.blue,
+              fontWeight: FontWeight.bold,
+            ),)
+          ],
+        ),
+        
         actions: <Widget>[
         Icon(Icons.search_outlined,size: 40,),
 
@@ -44,13 +60,14 @@ class _KonstitutsiyaState extends State<Konstitutsiya> {
         child: ListView(
           children: [
             DrawerHeader(child: Center(
-              child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTslgjf0gPm1H8IieIOCEoa_ArSmj7R5ErfoGuW0CqqkGo6cG6GMoxWpa3ofVb_m85kIOs&usqp=CAU",),
+              child: Image.asset('images/bayroq.jpg',width: 500,height: 400,),
 
             ),),
             ListTile(
               leading: Icon(Icons.music_note_rounded,color: Colors.blue,),
               title: Text("Audio versiya",style: TextStyle(
-                color: Colors.black54,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
               ),),
               onTap: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FirstPage()));
@@ -59,7 +76,8 @@ class _KonstitutsiyaState extends State<Konstitutsiya> {
             ListTile(
               leading: Icon(Icons.book_online_rounded,color: Colors.blue,),
               title: Text("Inson Huquqlari va umumjahon deklaratsiyasi",style: TextStyle(
-                color: Colors.black54,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
               ),),
               onTap: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SecondPage()));
@@ -68,7 +86,9 @@ class _KonstitutsiyaState extends State<Konstitutsiya> {
             ListTile(
               leading: Icon(Icons.error_outline,color: Colors.blue,),
               title: Text("Dastur haqida",
-              style: TextStyle(color: Colors.black54),),
+              style: TextStyle(color: Colors.black,
+              fontWeight: FontWeight.bold,
+              )),
               onTap: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ThirdPage()));
               },
@@ -76,7 +96,8 @@ class _KonstitutsiyaState extends State<Konstitutsiya> {
             ListTile(
               leading: Icon(Icons.share,color: Colors.blue,),
               title: Text("Bo'lishish",style: TextStyle(
-                color: Colors.black54,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
               ),),
               onTap: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FourthPage()));
@@ -140,6 +161,26 @@ class _KonstitutsiyaState extends State<Konstitutsiya> {
                   },
                 ),
               ),
+              Card(
+                color: Colors.cyan[50],
+                child: ListTile(
+                  title: Text("BESHINCHI BO'LIM.DAVLAT HOKIMIYATINING TASHKIL ETILISHI"),
+                  leading: Icon(Icons.arrow_forward_ios_outlined),
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BeshinchiPage()));
+                  },
+                ),
+              ),
+              Card(
+                color: Colors.cyan[50],
+                child: ListTile(
+                  title: Text("OLTINCHI BO'LIM.KONSITUTSIYAGA O'ZGARTIRISH KIRITISH TARTIBI"),
+                  leading: Icon(Icons.arrow_forward_ios_outlined),
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OltinchiPage()));
+                  },
+                ),
+              )
 
             ],
           ),
